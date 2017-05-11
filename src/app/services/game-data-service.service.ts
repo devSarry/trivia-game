@@ -11,7 +11,7 @@ export class GameDataServiceService {
     pointsToWin = 10;
     timePerQuestion = 10;
     gameState: Game;
-    teams: Team[];
+    teams: Team[] = [];
     questions: any;
     numberOfQuestions = 0;
 
@@ -33,4 +33,7 @@ export class GameDataServiceService {
     }
 
 
+    removeTeam(): void {
+        this.teams.pop();
+    }
 }

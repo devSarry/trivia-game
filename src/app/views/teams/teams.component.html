@@ -1,18 +1,48 @@
-<app-card>
+<app-card [animateEvent]="startAnimate">
+
     <header class="header">
         <div>How many teams will be playing?</div>
     </header>
     <div class="card-content">
-        <div class="team-pool-area columns">
-            <div class="column is-three-quarters grey" *ngFor="let t of teams">
-                <i class="fa fa-users team-color-2" aria-hidden="true"></i>
+        <div class="columns">
+            <div class="team-pool-area">
+                <div class="team-icon padding-left" *ngFor="let t of teams; let i = index">
+                    <div>
+                        <i class="fa fa-users team-color-{{ i + 1 }} "
+                           aria-hidden="true">
+                        </i>
+                    </div>
+                    <div class="tag is-medium padding-left">{{ t.name }}</div>
+                </div>
+
             </div>
-            <div class="column">
-                <i class="fa fa-users team-color-2" aria-hidden="true"></i>
-                <input type="text" class="input" placeholder="Team Name" [(ngModel)]="teamName">
-                <span class="button" (click)="addTeam(teamName)">add</span>
-                <span class="button" (click)="removeTeam()">remove</span>
+            <div class="team-input-box has-text-centered">
+                <div class="team-icon">
+                    <i class="fa fa-users team-color-{{ teams.length + 1}}" aria-hidden="true"></i>
+                    <i class="fa fa-ban" *ngIf="teams.length > 4"></i>
+                </div>
+                <div class="team-input">
+                    <input type="text" class="input" placeholder="Team Name"
+                           #teamName>
+                    <button class="button" (click)="addTeam(teamName.value)"
+                            [disabled]="teams.length >= maxNumberOfTeams"
+                    >add
+                    </button>
+                    <button class="button is-danger is-outlined"
+                            (click)="removeTeam()"
+                            [disabled]="teams.length == 0"
+                    >remove
+                    </button>
+                </div>
             </div>
+        </div>
+        <div class="has-text-centered"
+             animates animatesInitMode="show"
+             [animatesOnInit]="{type:'fadeInDown', keepFlow: true, duration: 400}"
+             *ngIf="teams.length">
+            <a routerLink="/quiz" class="button is-success is-large is-outlined" (click)="startGame()">
+                start game
+            </a>
         </div>
     </div>
 </app-card>

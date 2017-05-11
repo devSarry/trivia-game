@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {GameDataServiceService} from "../../services/game-data-service.service";
-import {Team} from "../../models/team";
+import {Team} from '../../models/team';
 
 @Component({
     selector: 'app-teams',
@@ -9,18 +9,15 @@ import {Team} from "../../models/team";
 })
 export class TeamsComponent implements OnInit {
 
-    @Input()
+    startGameAnimtate:any;
+    startAnimate: any = 'shake';
     teamName: string;
-
-
-    teams: Team[];
-    team: Team;
+    teams: Team[] = [];
 
 
     maxNumberOfTeams = 5;
 
     constructor(private gameService: GameDataServiceService) {
-
     }
 
     ngOnInit() {
@@ -33,7 +30,12 @@ export class TeamsComponent implements OnInit {
     }
 
     removeTeam() {
-
+        this.gameService.removeTeam();
     }
+
+    startGame() {
+        this.startAnimate = this.startAnimate === 'shake' ? 'fadeOut' : 'shake';
+    }
+
 
 }

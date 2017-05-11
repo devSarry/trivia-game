@@ -1,2 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bulma";
+@import "~animate.css";
+
+.app-content{
+
+}
+.cyan {
+    background-color: #00bcd4!important;
+    min-height: 100vh;
+}
