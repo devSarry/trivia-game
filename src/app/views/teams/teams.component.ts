@@ -34,7 +34,7 @@ export class TeamsComponent implements OnInit {
     }
 
     startGame() {
-        this.startAnimate = this.startAnimate === 'shake' ? 'fadeOut' : 'shake';
+        this.gameService.startGame();
     }
 
 

@@ -2,6 +2,7 @@ export class Team {
 
     name: string;
     points: number;
+    isReady = false;
 
     constructor(name: string, points = 0){
         this.name = name;

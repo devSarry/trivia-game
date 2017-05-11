@@ -11,7 +11,8 @@ import {LandingComponent} from './views/landing/landing.component';
 import {GameComponent} from './views/game/game.component';
 import {CardComponent} from './components/card/card.component';
 import {TeamsComponent} from './views/teams/teams.component';
-import {AnimatesDirective, AnimationService} from "css-animator";
+import {AnimatesDirective, AnimationService} from 'css-animator';
+import {ChunksPipe} from './helpers/helpers';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import {AnimatesDirective, AnimationService} from "css-animator";
         GameComponent,
         CardComponent,
         TeamsComponent,
-        AnimatesDirective
+        AnimatesDirective,
+        ChunksPipe
     ],
     imports: [
         BrowserModule,

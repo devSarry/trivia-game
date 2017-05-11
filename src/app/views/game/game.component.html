@@ -1,3 +1,50 @@
-<app-card>
-    
-</app-card>
+<div>
+    <div class="card columns nav-wrapper">
+        <div class="column is-narrow player-stats">
+            <div class="team-icon">
+                <i class="fa fa-users team-color-1" aria-hidden="true"></i>
+                <span>team name</span>
+            </div>
+        </div>
+        <div class="column play-time">
+            <progress class="progress is-success" value="{{ 100 - ((gameTimmer/gameState.gameTime) * 100)  }}" max="100">60%</progress>
+        </div>
+        <div class="column is-narrow life-lines">
+            <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+        </div>
+    </div>
+
+
+    <app-card>
+
+        <div class="player-ready" *ngIf="!gameState.teamPlaying.isReady">
+            <div><i class="fa fa-users team-color-1" aria-hidden="true"></i></div>
+            <div *ngIf="ticks < 4">
+                <button class="button is-success is-outlined">{{ 3 - ticks }}</button>
+            </div>
+            <div *ngIf="ticks >= 4" (click)="startGame()">
+                <button class="button is-success is-outlined">start</button>
+            </div>
+        </div>
+
+        <div *ngIf="gameState.teamPlaying.isReady">
+            <div class="question-wrapper">
+                <div class="question-text">
+                    {{ gameState.question.question }}
+                </div>
+            </div>
+            <hr>
+            <div class="answers-wrapper">
+                <div *ngFor="let chunk of gameState.question.choices | chunks: 2" class="columns">
+                    <div *ngFor="let choice of chunk" class="column is-half">
+                        <button class="button" (click)="checkAnswer(choice)">{{ choice }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </app-card>
+</div>

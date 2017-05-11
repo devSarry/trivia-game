@@ -6,13 +6,13 @@ export class Game {
     teams: Team[];
     question: Question;
     pointsToWin: number;
-    timePerQuestion: number;
+    gameTime: number;
 
-    constructor(teams: Team[], question: Question, pointsToWin: number, timePerQuestion: number ){
+    constructor(teams: Team[], question: Question, pointsToWin: number, gameTime: number ){
         this.teams = teams;
         this.question = question;
         this.pointsToWin = pointsToWin;
-        this.timePerQuestion = timePerQuestion;
+        this.gameTime = gameTime;
 
         this.teamPlaying = this.teams.pop();
     }
