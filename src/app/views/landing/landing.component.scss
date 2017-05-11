@@ -1,0 +1,19 @@
+@import "~bulma";
+.landing {
+    @extend .has-text-centered;
+    font-size: 6em;
+    padding-top: .3em;
+}
+.start{
+    @extend  .has-text-centered;
+
+    padding-top: 3em;
+}
+.start-button{
+    @extend .is-success;
+    @extend .is-outlined;
+    @extend .button;
+
+    font-size: 3em;
+
+}

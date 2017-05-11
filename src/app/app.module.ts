@@ -3,20 +3,31 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './router/app-routing.module';
 import { AppComponent } from './app.component';
+import {GameDataServiceService} from "./services/game-data-service.service";
+import {CommonModule} from "@angular/common";
+import { LandingComponent } from './views/landing/landing.component';
+import { GameComponent } from './views/game/game.component';
+import { CardComponent } from './components/card/card.component';
+import { TeamsComponent } from './views/teams/teams.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LandingComponent,
+    GameComponent,
+    CardComponent,
+    TeamsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [GameDataServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

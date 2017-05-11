@@ -1,0 +1,11 @@
+@import "~bulma";
+.card{
+    min-height: 60vh;
+}
+.content-card{
+    @extend .is-three-quarters;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 2em;
+
+}

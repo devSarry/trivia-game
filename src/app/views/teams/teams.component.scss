@@ -1,0 +1,67 @@
+@import "~bulma";
+
+
+/* RGB */
+$color1: rgba(73, 73, 71, 1);
+$color2: rgba(53, 255, 105, 1);
+$color3: rgba(68, 204, 255, 1);
+$color4: rgba(116, 148, 234, 1);
+$color5: rgba(209, 56, 191, 1);
+
+.header {
+    @extend .has-text-centered;
+    font-size: 2em;
+    padding-top: .3em;
+}
+.start{
+    @extend  .has-text-centered;
+
+    padding-top: 3em;
+}
+.start-button{
+    @extend .is-success;
+    @extend .is-outlined;
+    @extend .button;
+
+    font-size: 3em;
+
+}
+.grey{
+    background-color: lightgrey;
+}
+
+.team-color-1,
+.team-color-1::before{
+    background: -webkit-gradient(linear, left top, left bottom, from($color1), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3em;
+}
+.team-color-2,
+.team-color-2::before{
+    background: -webkit-gradient(linear, left top, left bottom, from($color2), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3em;
+}
+.team-color-3,
+.team-color-3::before{
+    background: -webkit-gradient(linear, left top, left bottom, from($color3), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3em;
+}
+.team-color-4,
+.team-color-4::before{
+    background: -webkit-gradient(linear, left top, left bottom, from($color4), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3em;
+}
+.team-color-5,
+.team-color-5::before{
+    background: -webkit-gradient(linear, left top, left bottom, from($color5), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3em;
+}

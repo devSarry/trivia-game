@@ -1,0 +1,18 @@
+<app-card>
+    <header class="header">
+        <div>How many teams will be playing?</div>
+    </header>
+    <div class="card-content">
+        <div class="team-pool-area columns">
+            <div class="column is-three-quarters grey" *ngFor="let t of teams">
+                <i class="fa fa-users team-color-2" aria-hidden="true"></i>
+            </div>
+            <div class="column">
+                <i class="fa fa-users team-color-2" aria-hidden="true"></i>
+                <input type="text" class="input" placeholder="Team Name" [(ngModel)]="teamName">
+                <span class="button" (click)="addTeam(teamName)">add</span>
+                <span class="button" (click)="removeTeam()">remove</span>
+            </div>
+        </div>
+    </div>
+</app-card>
